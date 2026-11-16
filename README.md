@@ -155,6 +155,14 @@ docs/PRESENTATION.md                  talk outline for the project presentation
 - Nasr et al., *Adversary Instantiation: Lower Bounds for Differentially Private Machine Learning*, IEEE S&P 2021
 - Carlini et al., *Membership Inference Attacks From First Principles*, IEEE S&P 2022 (LiRA)
 
+## Team
+
+| Name | GitHub |
+|---|---|
+| Vasu Sharma | [@vsh9705](https://github.com/vsh9705) |
+| Shashvat Singh | [@sh4shv4t](https://github.com/sh4shv4t) |
+| Adya Sharma | |
+
 ## License
 
 [MIT](LICENSE)
