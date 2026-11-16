@@ -1,6 +1,6 @@
-# Presentation outline
+# Talk outline
 
-Maps the five things the presentation has to cover to what is in this repo. Figures live in [`../figures`](../figures).
+A walkthrough of the project in five parts, if you want to present it. Figures live in [`../figures`](../figures).
 
 ## 1. Problem identification and motivation
 

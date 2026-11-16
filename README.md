@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/license-MIT-f97316" alt="MIT license">
 </p>
 
-<p align="center"><b>FLTDI course project</b> · auditing differentially private federated learning with membership inference attacks</p>
+<p align="center">Auditing differentially private federated learning with membership inference attacks</p>
 
 ---
 
@@ -142,7 +142,7 @@ notebooks/DP_FedAvg_MIA_Audit.ipynb   the full experiment (with outputs)
 results/results_table.csv             final numbers, mean ± std over 3 seeds
 figures/                              all plots from the notebook
 docs/DP_FedAvg_Plain_English_Report.docx   plain-English write-up
-docs/PRESENTATION.md                  talk outline for the project presentation
+docs/TALK_OUTLINE.md                  outline for presenting the work
 ```
 
 ## References
