@@ -1,0 +1,64 @@
+{
+ "cfg": {
+  "name": "Clip-only",
+  "n_clients": 500,
+  "samples_each": 20,
+  "q": 0.1,
+  "rounds": 100,
+  "local_epochs": 5,
+  "batch": 10,
+  "local_lr": 0.05,
+  "server_lr": 1.0,
+  "clip": 1.0,
+  "z": 0.0,
+  "delta": 1e-05,
+  "eval_every": 10
+ },
+ "seed": 2,
+ "seconds": 51.38449716567993,
+ "accuracy": {
+  "test": 0.54
+ },
+ "history": [
+  {
+   "round": 10,
+   "test_acc": 0.3661
+  },
+  {
+   "round": 20,
+   "test_acc": 0.4288
+  },
+  {
+   "round": 30,
+   "test_acc": 0.4588
+  },
+  {
+   "round": 40,
+   "test_acc": 0.4765
+  },
+  {
+   "round": 50,
+   "test_acc": 0.4859
+  },
+  {
+   "round": 60,
+   "test_acc": 0.4999
+  },
+  {
+   "round": 70,
+   "test_acc": 0.5094
+  },
+  {
+   "round": 80,
+   "test_acc": 0.5166
+  },
+  {
+   "round": 90,
+   "test_acc": 0.5306
+  },
+  {
+   "round": 100,
+   "test_acc": 0.54
+  }
+ ]
+}

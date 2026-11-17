@@ -1,0 +1,92 @@
+{
+ "cfg": {
+  "name": "FedAvg",
+  "n_clients": 500,
+  "samples_each": 20,
+  "q": 0.1,
+  "rounds": 100,
+  "local_epochs": 5,
+  "batch": 10,
+  "local_lr": 0.05,
+  "server_lr": 1.0,
+  "clip": null,
+  "z": 0.0,
+  "delta": 1e-05,
+  "eval_every": 10
+ },
+ "seed": 0,
+ "seconds": 58.41972041130066,
+ "accuracy": {
+  "member": 0.6226,
+  "nonmember": 0.5479,
+  "test": 0.5485
+ },
+ "history": [
+  {
+   "round": 0,
+   "test_acc": 0.1173,
+   "train_acc": 0.109,
+   "auc": 0.49955475
+  },
+  {
+   "round": 10,
+   "test_acc": 0.3582,
+   "train_acc": 0.3727,
+   "auc": 0.51722399
+  },
+  {
+   "round": 20,
+   "test_acc": 0.4232,
+   "train_acc": 0.4481,
+   "auc": 0.520618625
+  },
+  {
+   "round": 30,
+   "test_acc": 0.4605,
+   "train_acc": 0.4918,
+   "auc": 0.52615751
+  },
+  {
+   "round": 40,
+   "test_acc": 0.4832,
+   "train_acc": 0.5266,
+   "auc": 0.530825445
+  },
+  {
+   "round": 50,
+   "test_acc": 0.5028,
+   "train_acc": 0.5405,
+   "auc": 0.532440465
+  },
+  {
+   "round": 60,
+   "test_acc": 0.516,
+   "train_acc": 0.5697,
+   "auc": 0.538239765
+  },
+  {
+   "round": 70,
+   "test_acc": 0.5289,
+   "train_acc": 0.5836,
+   "auc": 0.5405352999999999
+  },
+  {
+   "round": 80,
+   "test_acc": 0.5345,
+   "train_acc": 0.5984,
+   "auc": 0.5429854949999999
+  },
+  {
+   "round": 90,
+   "test_acc": 0.5392,
+   "train_acc": 0.6113,
+   "auc": 0.5465212199999999
+  },
+  {
+   "round": 100,
+   "test_acc": 0.5485,
+   "train_acc": 0.6226,
+   "auc": 0.548960255
+  }
+ ]
+}

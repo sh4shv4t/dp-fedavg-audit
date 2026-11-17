@@ -1,0 +1,65 @@
+{
+ "cfg": {
+  "name": "z=2 buggy",
+  "n_clients": 500,
+  "samples_each": 20,
+  "q": 0.1,
+  "rounds": 100,
+  "local_epochs": 5,
+  "batch": 10,
+  "local_lr": 0.05,
+  "server_lr": 1.0,
+  "clip": 1.0,
+  "z": 2.0,
+  "delta": 1e-05,
+  "eval_every": 10,
+  "noise_on_mean_bug": true
+ },
+ "seed": 1,
+ "seconds": 233.47919917106628,
+ "accuracy": {
+  "test": 0.5304
+ },
+ "history": [
+  {
+   "round": 10,
+   "test_acc": 0.3426
+  },
+  {
+   "round": 20,
+   "test_acc": 0.4154
+  },
+  {
+   "round": 30,
+   "test_acc": 0.4485
+  },
+  {
+   "round": 40,
+   "test_acc": 0.47
+  },
+  {
+   "round": 50,
+   "test_acc": 0.4824
+  },
+  {
+   "round": 60,
+   "test_acc": 0.4951
+  },
+  {
+   "round": 70,
+   "test_acc": 0.5066
+  },
+  {
+   "round": 80,
+   "test_acc": 0.5172
+  },
+  {
+   "round": 90,
+   "test_acc": 0.5263
+  },
+  {
+   "round": 100,
+   "test_acc": 0.5304
+  }
+ ]
+}

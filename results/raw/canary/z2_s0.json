@@ -1,0 +1,64 @@
+{
+ "cfg": {
+  "name": "z=2",
+  "n_clients": 500,
+  "samples_each": 20,
+  "q": 0.1,
+  "rounds": 100,
+  "local_epochs": 5,
+  "batch": 10,
+  "local_lr": 0.05,
+  "server_lr": 1.0,
+  "clip": 1.0,
+  "z": 2.0,
+  "delta": 1e-05,
+  "eval_every": 10
+ },
+ "seed": 0,
+ "seconds": 50.00382423400879,
+ "accuracy": {
+  "test": 0.269
+ },
+ "history": [
+  {
+   "round": 10,
+   "test_acc": 0.1916
+  },
+  {
+   "round": 20,
+   "test_acc": 0.2288
+  },
+  {
+   "round": 30,
+   "test_acc": 0.2422
+  },
+  {
+   "round": 40,
+   "test_acc": 0.2517
+  },
+  {
+   "round": 50,
+   "test_acc": 0.2603
+  },
+  {
+   "round": 60,
+   "test_acc": 0.2403
+  },
+  {
+   "round": 70,
+   "test_acc": 0.2645
+  },
+  {
+   "round": 80,
+   "test_acc": 0.2605
+  },
+  {
+   "round": 90,
+   "test_acc": 0.2721
+  },
+  {
+   "round": 100,
+   "test_acc": 0.269
+  }
+ ]
+}
