@@ -1,7 +1,9 @@
 data/
 dp_fedavg_project/
 *.npz
+!results/raw/**/*.npz
 deliverables.zip
 .ipynb_checkpoints/
 __pycache__/
+.pytest_cache/
 .venv/

@@ -1,8 +1,11 @@
-torch
+torch>=2.2
 torchvision
 opacus
 numpy
 pandas
+pyarrow
+pillow
 scipy
 scikit-learn
 matplotlib
+pytest

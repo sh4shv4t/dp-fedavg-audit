@@ -1,0 +1,13 @@
+[project]
+name = "dpfl-audit"
+version = "0.2.0"
+description = "Auditing DP-FedAvg with membership inference attacks and canary clients"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.setuptools]
+packages = ["dpfl_audit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
