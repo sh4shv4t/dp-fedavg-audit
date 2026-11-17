@@ -20,6 +20,9 @@ class FLConfig:
     z: float = 0.0  # noise multiplier, std of noise on the SUM is z * clip
     delta: float = 1e-5
     eval_every: int = 10
+    # Deliberate bug for the audit demo: noise is scaled for the SUM but added to the
+    # MEAN, so it is q*N times too small while the accountant still reports the same eps.
+    noise_on_mean_bug: bool = False
 
     @property
     def n_members(self) -> int:

@@ -3,6 +3,7 @@
     python scripts/run_experiments.py main      # 6 configs x 3 seeds (the notebook's grid)
     python scripts/run_experiments.py refs      # reference (OUT) models for LiRA
     python scripts/run_experiments.py canary    # client-level canary audit
+    python scripts/run_experiments.py bug       # canary audit vs a deliberately buggy DP implementation
     python scripts/run_experiments.py scaling   # same epsilon, more clients per round
     python scripts/run_experiments.py all
 """
@@ -32,7 +33,7 @@ SCALING_CONFIGS = ["FedAvg", "z=1", "z=2"]
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("what", choices=["main", "refs", "canary", "scaling", "all"])
+    ap.add_argument("what", choices=["main", "refs", "canary", "bug", "scaling", "all"])
     ap.add_argument("--seeds", type=int, nargs="+", default=[0, 1, 2])
     ap.add_argument("--n-refs", type=int, default=4)
     ap.add_argument("--canaries", type=int, default=200)
@@ -49,7 +50,7 @@ def main():
         test=split.take(split.test_idx, DEV),
     )
     fix = (lambda c: c.with_(rounds=10, eval_every=5)) if args.quick else (lambda c: c)
-    todo = ["main", "refs", "canary", "scaling"] if args.what == "all" else [args.what]
+    todo = ["main", "refs", "canary", "bug", "scaling"] if args.what == "all" else [args.what]
 
     if "main" in todo:
         for seed in args.seeds:
@@ -86,6 +87,20 @@ def main():
                 print(f"=== canary | {cfg.name} | seed {seed} ===")
                 res = run_fl(fix(cfg), mem, dict(test=evals["test"]), seed, DEV, canaries=cs)
                 save_run(res, p)
+            del cs
+
+    if "bug" in todo:
+        # an implementation bug the accountant cannot see; can the canary audit catch it?
+        d = ParamLayout(CNN()).d
+        cfg = PAPER_CONFIGS["z=2"].with_(name="z=2 buggy", noise_on_mean_bug=True)
+        for seed in args.seeds:
+            p = run_path("canary", cfg.name, seed)
+            if exists(p):
+                continue
+            print(f"=== canary | {cfg.name} | seed {seed} ===")
+            cs = CanarySet.make(d, args.canaries, args.held_out, seed, DEV)
+            res = run_fl(fix(cfg), mem, dict(test=evals["test"]), seed, DEV, canaries=cs)
+            save_run(res, p)
             del cs
 
     if "scaling" in todo:

@@ -207,6 +207,8 @@ def run_fl(
         noise_norm = 0.0
         if cfg.is_dp:
             noise = torch.randn(d, device=device, generator=gen) * cfg.z * cfg.clip
+            if cfg.noise_on_mean_bug:
+                noise = noise / denom
             noise_norm = float(noise.norm())
             agg += noise
         if canaries is not None:
