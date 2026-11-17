@@ -24,7 +24,8 @@ def rdp_epsilon(z: float, q: float, rounds: int, delta: float) -> float:
 
 def gdp_delta(eps: float, mu: float) -> float:
     """delta(eps) for a mu-Gaussian-DP mechanism (Dong, Roth and Su 2019)."""
-    return norm.cdf(-eps / mu + mu / 2) - math.exp(eps) * norm.cdf(-eps / mu - mu / 2)
+    # second term in log space so huge mu (barely any noise) does not overflow exp(eps)
+    return norm.cdf(-eps / mu + mu / 2) - math.exp(eps + norm.logcdf(-eps / mu - mu / 2))
 
 
 def gdp_epsilon(mu: float, delta: float) -> float:
